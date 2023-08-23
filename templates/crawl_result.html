@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">  
+</head>
+<body>
+    <p>爬取網頁:https://currencyex.doitwell.tw/tw/</p>
+
+    <table class="recommend_table" cellpadding="10" >
+        <tr bgcolor =#639199 >
+            {% for col in recommend.columns %}
+            <th><font size="5">
+                {{col}}
+            </font>
+            </th> 
+            {% endfor %}
+        </tr>
+            {% for index, row in recommend.iterrows %}
+            <tr>
+                {% for cell in row %}
+                <td align="center" valign="center"><font size="4">
+                    {{cell}}
+                </font>
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    <p>
+        &nbsp;
+    </p>
+    <table class="all_table" cellpadding="10" >
+            <tr bgcolor =#639199>
+                {% for col in all.columns %}
+                <th><font size="4">
+                    {{col}}
+                </font>
+                </th>
+                {% endfor %}
+            </tr>
+                {% for index, row in all.iterrows %}
+                <tr>
+                    {% for cell in row %}
+                    <td align="center" valign="center">
+                        {{cell}}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+    </tbody>
+</body>
